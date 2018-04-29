@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PrincipalPage} from '../principal/principal';
+import { PrincipalPage } from '../principal/principal';
 
 
 @IonicPage()
@@ -17,8 +17,7 @@ export class SliderPage {
   }
 
   irInicio(){
-
-
+    this.navCtrl.push(PrincipalPage);
   }
 
 

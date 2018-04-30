@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { PrincipalPage } from '../pages/principal/principal';
 
 
+
 @NgModule({
   declarations: [
     MyApp,

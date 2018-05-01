@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { PrincipalPage } from '../pages/principal/principal';
+import { BancoProvider } from '../providers/banco/banco';
 
 
 
@@ -26,7 +27,8 @@ import { PrincipalPage } from '../pages/principal/principal';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BancoProvider
   ]
 })
 export class AppModule {}

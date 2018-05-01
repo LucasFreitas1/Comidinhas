@@ -10,6 +10,7 @@ import { BancoProvider } from '../providers/banco/banco';
 
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -17,7 +18,7 @@ import { BancoProvider } from '../providers/banco/banco';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

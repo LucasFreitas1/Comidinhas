@@ -10,14 +10,16 @@
 
 
 <ion-content>
-    
+
 
     <ion-list>
-        
+        <ul>
+            <li *ngFor="let item of itemss">
+              {{ item.nome }}
+            </li>
+          </ul>
       <ion-card style="background-color:rgb(238, 238, 238)" >
-
-          <img class="imagem-card" src="https://s3.amazonaws.com/ionic-io-static/WbGfSDVxT7eIQDGlcyOQ_festival_japones.jpg">
-    
+        <img class="imagem-card" src="https://s3.amazonaws.com/ionic-io-static/WbGfSDVxT7eIQDGlcyOQ_festival_japones.jpg">
         <ion-card-content >
           <ion-card-title>
             Festival do Japão

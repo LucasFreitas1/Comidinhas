@@ -6,8 +6,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { PrincipalPage } from '../pages/principal/principal';
-import { BancoProvider } from '../providers/banco/banco';
 
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyAhOOur-hJFWFT1cLZovmxFUeJcsqPzIPE",
+    authDomain: "comidinhas-bsb.firebaseapp.com",
+    databaseURL: "https://comidinhas-bsb.firebaseio.com",
+    projectId: "comidinhas-bsb",
+    storageBucket: "comidinhas-bsb.appspot.com",
+    messagingSenderId: "221610225104"
+};
 
 
 
@@ -19,6 +31,9 @@ import { BancoProvider } from '../providers/banco/banco';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig,'comidinhasbsb'),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,8 +43,8 @@ import { BancoProvider } from '../providers/banco/banco';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BancoProvider
+    AngularFirestore,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

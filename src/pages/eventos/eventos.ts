@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
-
+import { EventoPage } from '../evento/evento'
 
 
 @IonicPage()
@@ -23,6 +23,11 @@ export class EventosPage {
       this.itemss = batata
     })
       
+  }
+
+  irEvento(){
+    this.navCtrl.push(EventoPage);
+    
   }
 
   

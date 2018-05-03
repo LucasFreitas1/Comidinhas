@@ -18,14 +18,33 @@
             <ion-card-content >
               <ion-card-title>
                 {{item.nome}}
+               
               </ion-card-title>
               <p>
-                Horário: das 13h ás 21h
+                Horário: das 13h às 21h 
               </p>
               <p>
                 Entrada: entre R$10 e R$25
               </p>
             </ion-card-content>
+
+            <ion-row no-padding>
+          
+              <ion-col text-center>
+                  <button ion-button clear small color="danger" icon-start (click)="irEvento()">
+                    <ion-icon name='paper'></ion-icon>
+                    Detalhes
+                  </button>
+                </ion-col>
+              <ion-col text-center>
+                  <button ion-button clear small color="danger" icon-start>
+                    <ion-icon name='bicycle'></ion-icon>
+                    Ir para
+                  </button>
+                </ion-col>
+              
+              
+            </ion-row>
           </ion-card>
     </ion-list>
   </ion-content>

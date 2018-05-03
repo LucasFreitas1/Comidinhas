@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { PrincipalPage } from '../pages/principal/principal';
+import { EventoPage} from '../pages/evento/evento';
 
 
 import { AngularFireModule } from 'angularfire2';
@@ -26,7 +27,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    PrincipalPage
+    PrincipalPage,
+    EventoPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    PrincipalPage
+    PrincipalPage,
+    EventoPage
   ],
   providers: [
     StatusBar,

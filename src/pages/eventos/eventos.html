@@ -13,82 +13,20 @@
 
 
     <ion-list>
-        <ul>
-            <li *ngFor="let item of itemss">
-              {{ item.nome }}
-            </li>
-          </ul>
-      <ion-card style="background-color:rgb(238, 238, 238)" >
-        <img class="imagem-card" src="https://s3.amazonaws.com/ionic-io-static/WbGfSDVxT7eIQDGlcyOQ_festival_japones.jpg">
-        <ion-card-content >
-          <ion-card-title>
-            Festival do Japão
-          </ion-card-title>
-          <p>
-            Horário: das 13h ás 21h
-          </p>
-          <p>
-            Entrada: entre R$10 e R$25
-          </p>
-        </ion-card-content>
-    
-        <ion-row no-padding>
-          
-          <ion-col text-center>
-              <button ion-button clear small color="danger" icon-start>
-                <ion-icon name='paper'></ion-icon>
-                Detalhes
-              </button>
-            </ion-col>
-          <ion-col text-center>
-              <button ion-button clear small color="danger" icon-start>
-                <ion-icon name='bicycle'></ion-icon>
-                Ir para
-              </button>
-            </ion-col>
-          
-          
-        </ion-row>
-    
-      </ion-card>
-
-
-      <ion-card style="background-color:rgb(238, 238, 238)" >
-
-        <img class="imagem-card" src="http://cdn.deboa.com/wp-content/uploads/2014/11/10299930_644198075685100_1276939641539654488_n.jpg"/>
-    
-        <ion-card-content >
-          <ion-card-title>
-            Encontro de Food Trucks
-          </ion-card-title>
-          <p>
-            Horário: das 13h ás 21h
-          </p>
-          <p>
-            Entrada: Gratuita
-          </p>
-        </ion-card-content>
-    
-        <ion-row no-padding>
-          
-          <ion-col text-center>
-              <button ion-button clear small color="danger" icon-start>
-                <ion-icon name='paper'></ion-icon>
-                Detalhes
-              </button>
-            </ion-col>
-          <ion-col text-center>
-              <button ion-button clear small color="danger" icon-start>
-                <ion-icon name='bicycle'></ion-icon>
-                Ir para
-              </button>
-            </ion-col>
-          
-          
-        </ion-row>
-    
-      </ion-card>
-    
+          <ion-card *ngFor = "let item of itemss" style="background-color:rgb(238, 238, 238)" >
+            <img class="imagem-card" src= {{item.imagem}}>
+            <ion-card-content >
+              <ion-card-title>
+                {{item.nome}}
+              </ion-card-title>
+              <p>
+                Horário: das 13h ás 21h
+              </p>
+              <p>
+                Entrada: entre R$10 e R$25
+              </p>
+            </ion-card-content>
+          </ion-card>
     </ion-list>
   </ion-content>
 

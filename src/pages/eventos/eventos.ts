@@ -22,6 +22,7 @@ export class EventosPage {
     this.items.subscribe( (batata) => {
       this.itemss = batata
     })
+      
   }
 
   

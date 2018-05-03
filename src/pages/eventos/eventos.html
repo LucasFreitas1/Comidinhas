@@ -21,23 +21,24 @@
                
               </ion-card-title>
               <p>
-                Horário: das 13h às 21h 
+                Horário: {{item.horario}} 
               </p>
               <p>
-                Entrada: entre R$10 e R$25
+                Preço: {{item.preco}}
               </p>
             </ion-card-content>
 
             <ion-row no-padding>
           
               <ion-col text-center>
-                  <button ion-button clear small color="danger" icon-start (click)="irEvento(nome)">
+                  <button ion-button clear small color="danger" icon-start (click)="irEvento()">
                     <ion-icon name='paper'></ion-icon>
                     Detalhes
                   </button>
                 </ion-col>
               <ion-col text-center>
-                  <button ion-button clear small color="danger" icon-start>
+               
+                  <button ion-button clear small color="danger" icon-start onclick="window.open('item.linkmaps'), '_system', 'location=yes'" >
                     <ion-icon name='bicycle'></ion-icon>
                     Ir para
                   </button>

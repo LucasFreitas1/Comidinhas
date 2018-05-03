@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+ 
 /**
  * Generated class for the EventoPage page.
  *
@@ -15,7 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventoPage {
 
+  public nomeRec;
+  public descricaoRec;
+  public linkMapsRec;
+  public dataRec;
+  public enderecoRec;
+  public infoRec;
+  public horarioRec;
+  public precoRec;
+  public imagemRec;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.nomeRec = navParams.get("nomeEnv");
+    
+
   }
 
   ionViewDidLoad() {

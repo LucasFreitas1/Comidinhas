@@ -26,7 +26,10 @@ export class EventosPage {
   }
 
   irEvento(){
-    this.navCtrl.push(EventoPage);
+    this.navCtrl.push(EventoPage, {
+      nomeEnv : this.itemss
+         
+    });
     
   }
 

@@ -12,8 +12,9 @@
 <ion-content>
 
 
+
     <ion-list>
-          <ion-card *ngFor = "let item of itemss" style="background-color:rgb(238, 238, 238)" >
+          <ion-card *ngFor = "let item of items | async" style="background-color:rgb(238, 238, 238)" >
             <img class="imagem-card" src= {{item.imagem}}>
             <ion-card-content >
               <ion-card-title>
@@ -31,14 +32,15 @@
             <ion-row no-padding>
           
               <ion-col text-center>
-                  <button ion-button clear small color="danger" icon-start (click)="irEvento()">
+               
+                  <button ion-button clear small color="danger" icon-start (click)="irEvento(item.nome)">
                     <ion-icon name='paper'></ion-icon>
                     Detalhes
                   </button>
                 </ion-col>
               <ion-col text-center>
                
-                  <button ion-button clear small color="danger" icon-start onclick="window.open('item.linkmaps'), '_system', 'location=yes'" >
+                  <button ion-button clear small color="danger" icon-start onclick="window.open('www.google.com'), '_system', 'location=no'" >
                     <ion-icon name='bicycle'></ion-icon>
                     Ir para
                   </button>

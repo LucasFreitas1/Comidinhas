@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AngularFirestore } from 'angularfire2/firestore';
+
 import { Observable } from 'rxjs/Observable';
 import { EventoPage } from '../evento/evento'
 
@@ -13,26 +14,21 @@ import { EventoPage } from '../evento/evento'
 })
 export class EventosPage {
 
-  
-  itemss
   items: Observable<any[]>;
+
+
+  public nomeEnviado;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, db: AngularFirestore) {
     this.items = db.collection('eventos').valueChanges();
-    this.items.subscribe( (batata) => {
-      this.itemss = batata
-    })
-      
   }
 
-  irEvento(){
-    this.navCtrl.push(EventoPage, {
-      nomeEnv : this.itemss
-         
-    });
-    
+  irEvento(nomeEnviado) {
+ 
+    this.navCtrl.push(EventoPage, this.nomeEnviado);
+
   }
 
-  
+
 
 }

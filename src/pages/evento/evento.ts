@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventoPage {
 
-  public nomeRec;
+  public nomeRec; 
   public descricaoRec;
   public linkMapsRec;
   public dataRec;
@@ -27,13 +27,11 @@ export class EventoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-    this.nomeRec = navParams.get("nomeEnv");
-    
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EventoPage');
+    console.log(this.navParams.get('nome'));
   }
 
 }

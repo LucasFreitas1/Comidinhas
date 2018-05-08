@@ -23,11 +23,12 @@ export class EventosPage {
     this.items = db.collection('eventos').valueChanges();
     this.items.subscribe((cadastrar) => {
       this.eventos = cadastrar
+
     })
 
   }
 
- 
+
   toggleSection(i) {
     this.eventos[i].open = !this.eventos[i].open;
   }

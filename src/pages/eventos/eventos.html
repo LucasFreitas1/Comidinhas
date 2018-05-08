@@ -12,7 +12,7 @@
 
 
   <ion-list>
-    <ion-card *ngFor="let item of eventos;  let i = index" style="background-color:rgb(238, 238, 238)">
+    <ion-card *ngFor="let item of eventos;  let i = index" style="background-color:rgb(112, 150, 255)">
       <img class="imagem-card" src={{item.imagem}}>
       <ion-card-content>
         <ion-card-title>
@@ -24,46 +24,34 @@
         <p>
           Preço: {{item.preco}}
         </p>
-      
+
       </ion-card-content>
 
-      <ion-card-content *ngIf = "item.open">
+      <ion-card-content *ngIf="item.open">
         <h3>Descrição:</h3>
         <p>{{item.descricao}}</p>
-        <p></p>
-      
       </ion-card-content>
-
-      <ion-row no-padding>
-        <ion-col text-center>
-          <button ion-button clear small color="danger" icon-start *ngIf="!item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
-            <ion-icon name='paper'></ion-icon>
-
-            Detalhes
-          </button>
-
-          
-          <button ion-button clear small color="danger" icon-start *ngIf="item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
-              <ion-icon name='paper'></ion-icon>
-  
-             Menos detalhes
-            </button>
-
-        </ion-col>
-        <ion-col text-center>
-          <button ion-button clear small color="danger" icon-start *ngIf="item.open">
-            <ion-icon color = "black" name='pin'></ion-icon>
-
-            Ir para
-          </button>
-
-
-
-        </ion-col>
-
-
-      </ion-row>
-      
+      <ion-col text-center>
+        <button ion-button clear small color="dark" icon-start *ngIf="!item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+          <ion-icon color="black" name='paper'></ion-icon>
+          Detalhes
+        </button>
+        <p></p>
+        <button ion-button clear small color="dark" icon-start *ngIf="item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+          <ion-icon color="black" name='paper'></ion-icon>
+          Menos detalhes
+        </button>
+        <p></p>
+        <a button ion-button clear small color="dark" icon-start *ngIf="item.open" href="{{item.info}}" target="_blank">
+          <ion-icon color="black" name='information-circle'></ion-icon>
+          Informações
+        </a>
+        <p></p>
+        <a button ion-button clear small color="dark" icon-start *ngIf="item.open" href="{{item.linkmaps}}" target="_blank">
+          <ion-icon color="black" name='pin'></ion-icon>
+          Localização
+        </a>
+      </ion-col>
     </ion-card>
 
 

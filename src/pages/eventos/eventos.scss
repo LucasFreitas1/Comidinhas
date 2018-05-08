@@ -11,8 +11,14 @@ page-eventos {
 
       .imagem-card {
         object-fit: cover; 
-        height: 150px;
+        height: 100px;
         width: 100%;
+      }
+      ion-card-content{
+        border-top: 1px solid gray;
+      }
+     ion-card{
+        align-items: baseline;
       }
     
      

@@ -4,30 +4,36 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFirestore } from 'angularfire2/firestore';
 
 import { Observable } from 'rxjs/Observable';
-import { EventoPage } from '../evento/evento'
+
 
 
 @IonicPage()
 @Component({
   selector: 'page-eventos',
-  templateUrl: 'eventos.html',
+  templateUrl: 'eventos.html'
 })
+
+
 export class EventosPage {
 
   items: Observable<any[]>;
-
-
-  public nomeEnviado;
+  eventos: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, db: AngularFirestore) {
     this.items = db.collection('eventos').valueChanges();
+    this.items.subscribe((cadastrar) => {
+      this.eventos = cadastrar
+    })
+
   }
 
-  irEvento(nomeEnviado) {
  
-    this.navCtrl.push(EventoPage, this.nomeEnviado);
-
+  toggleSection(i) {
+    this.eventos[i].open = !this.eventos[i].open;
   }
+
+
+
 
 
 

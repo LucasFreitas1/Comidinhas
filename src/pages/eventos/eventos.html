@@ -1,10 +1,9 @@
-
 <ion-header>
-  <ion-item style="background-color:whitesmoke" >
-      <p item-start>Filtrar por:</p>
-      <button  style="background-color: whitesmoke; color:#292929" ion-button round item-start>Data</button>
-      <button style="background-color: whitesmoke; color:#292929" ion-button round item>Localização</button>
-    </ion-item>
+  <ion-item style="background-color:whitesmoke">
+
+    <button style="background-color: whitesmoke; color:#292929" ion-button round item-start>Data</button>
+    <button style="background-color: whitesmoke; color:#292929" ion-button round item>Localização</button>
+  </ion-item>
 </ion-header>
 
 
@@ -12,43 +11,61 @@
 <ion-content>
 
 
+  <ion-list>
+    <ion-card *ngFor="let item of eventos;  let i = index" style="background-color:rgb(238, 238, 238)">
+      <img class="imagem-card" src={{item.imagem}}>
+      <ion-card-content>
+        <ion-card-title>
+          {{item.nome}}
+        </ion-card-title>
+        <p>
+          Horario: {{item.horario}}
+        </p>
+        <p>
+          Preço: {{item.preco}}
+        </p>
+      
+      </ion-card-content>
 
-    <ion-list>
-          <ion-card *ngFor = "let item of items | async" style="background-color:rgb(238, 238, 238)" >
-            <img class="imagem-card" src= {{item.imagem}}>
-            <ion-card-content >
-              <ion-card-title>
-                {{item.nome}}
-               
-              </ion-card-title>
-              <p>
-                Horário: {{item.horario}} 
-              </p>
-              <p>
-                Preço: {{item.preco}}
-              </p>
-            </ion-card-content>
+      <ion-card-content *ngIf = "item.open">
+        <h3>Descrição:</h3>
+        <p>{{item.descricao}}</p>
+        <p></p>
+      
+      </ion-card-content>
 
-            <ion-row no-padding>
+      <ion-row no-padding>
+        <ion-col text-center>
+          <button ion-button clear small color="danger" icon-start *ngIf="!item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+            <ion-icon name='paper'></ion-icon>
+
+            Detalhes
+          </button>
+
           
-              <ion-col text-center>
-               
-                  <button ion-button clear small color="danger" icon-start (click)="irEvento(item.nome)">
-                    <ion-icon name='paper'></ion-icon>
-                    Detalhes
-                  </button>
-                </ion-col>
-              <ion-col text-center>
-               
-                  <button ion-button clear small color="danger" icon-start onclick="window.open('www.google.com'), '_system', 'location=no'" >
-                    <ion-icon name='bicycle'></ion-icon>
-                    Ir para
-                  </button>
-                </ion-col>
-              
-              
-            </ion-row>
-          </ion-card>
-    </ion-list>
-  </ion-content>
+          <button ion-button clear small color="danger" icon-start *ngIf="item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+              <ion-icon name='paper'></ion-icon>
+  
+             Menos detalhes
+            </button>
 
+        </ion-col>
+        <ion-col text-center>
+          <button ion-button clear small color="danger" icon-start *ngIf="item.open">
+            <ion-icon color = "black" name='pin'></ion-icon>
+
+            Ir para
+          </button>
+
+
+
+        </ion-col>
+
+
+      </ion-row>
+      
+    </ion-card>
+
+
+  </ion-list>
+</ion-content>

@@ -1,18 +1,18 @@
 <ion-header>
   <ion-item style="background-color:whitesmoke">
-
-    <button style="background-color: whitesmoke; color:#292929" ion-button round item-start>Data</button>
-    <button style="background-color: whitesmoke; color:#292929" ion-button round item>Localização</button>
+    Filtrar por:
+    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end>Data</button>
+    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end>Localização</button>
   </ion-item>
 </ion-header>
 
 
 
-<ion-content>
+<ion-content class="bg-style">
 
 
   <ion-list>
-    <ion-card *ngFor="let item of eventos;  let i = index" style="background-color:rgb(112, 150, 255)">
+    <ion-card *ngFor="let item of eventos;  let i = index" style="background-color:rgb(206, 206, 206)">
       <img class="imagem-card" src={{item.imagem}}>
       <ion-card-content>
         <ion-card-title>
@@ -28,8 +28,11 @@
       </ion-card-content>
 
       <ion-card-content *ngIf="item.open">
-        <h3>Descrição:</h3>
+        <h3>Sobre:</h3>
+        <br>
         <p>{{item.descricao}}</p>
+        <br>
+       <p>Endereço: {{item.endereco}}</p>
       </ion-card-content>
       <ion-col text-center>
         <button ion-button clear small color="dark" icon-start *ngIf="!item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">

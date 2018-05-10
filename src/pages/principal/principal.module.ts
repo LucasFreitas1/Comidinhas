@@ -4,7 +4,7 @@ import { PrincipalPage } from './principal';
 
 @NgModule({
   declarations: [
-    PrincipalPage,
+    
   ],
   imports: [
     IonicPageModule.forChild(PrincipalPage),

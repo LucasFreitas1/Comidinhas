@@ -1,8 +1,8 @@
 <ion-header>
   <ion-item style="background-color:whitesmoke">
     Filtrar por:
-    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end>Data</button>
-    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end>Localização</button>
+    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(1)">Data</button>
+    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(2)">Localização</button>
   </ion-item>
 </ion-header>
 
@@ -12,7 +12,7 @@
 
 
   <ion-list>
-    <ion-card *ngFor="let item of eventos;  let i = index" style="background-color:rgb(206, 206, 206)">
+     <ion-card *ngFor="let item of eventos;  let i = index"   style="background-color:rgb(206, 206, 206)" >
       <img class="imagem-card" src={{item.imagem}}>
       <ion-card-content>
         <ion-card-title>
@@ -28,29 +28,27 @@
       </ion-card-content>
 
       <ion-card-content *ngIf="item.open">
-        <h3>Sobre:</h3>
-        <br>
         <p>{{item.descricao}}</p>
         <br>
-       <p>Endereço: {{item.endereco}}</p>
+        <p>Endereço: {{item.endereco}}</p>
       </ion-card-content>
       <ion-col text-center>
-        <button ion-button clear small color="dark" icon-start *ngIf="!item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
-          <ion-icon color="black" name='paper'></ion-icon>
+        <button ion-button class=".left" clear small color="dark" icon-start *ngIf="!item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+          <ion-icon color="black" name='arrow-forward'></ion-icon>
           Detalhes
         </button>
-        <p></p>
-        <button ion-button clear small color="dark" icon-start *ngIf="item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
-          <ion-icon color="black" name='paper'></ion-icon>
+        <br>
+        <button ion-button class=".left"  clear small color="dark" icon-start *ngIf="item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+          <ion-icon color="black" name='arrow-up'></ion-icon>
           Menos detalhes
         </button>
-        <p></p>
-        <a button ion-button clear small color="dark" icon-start *ngIf="item.open" href="{{item.info}}" target="_blank">
+        <br>
+        <a button ion-button class=".left"  clear small color="dark" icon-start *ngIf="item.open" href="{{item.info}}" target="_blank">
           <ion-icon color="black" name='information-circle'></ion-icon>
-          Informações
+         Mais Informações
         </a>
-        <p></p>
-        <a button ion-button clear small color="dark" icon-start *ngIf="item.open" href="{{item.linkmaps}}" target="_blank">
+        <br>
+        <a button ion-button  class=".left" clear small color="dark" icon-start *ngIf="item.open" href="{{item.linkmaps}}" target="_blank">
           <ion-icon color="black" name='pin'></ion-icon>
           Localização
         </a>

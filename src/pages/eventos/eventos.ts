@@ -42,15 +42,15 @@ export class EventosPage {
 
   defineFiltro(valor){
     if(valor == 1){
-      this.eventos = this.eventosLocal;
-    }else if(valor == 2){
       this.eventos = this.eventosData;
+    }else if(valor == 2){
+      this.eventos = this.eventosLocal;
     }
 
   }
 
-  toggleSectionData(i) {
-    this.eventosData[i].open = !this.eventosData[i].open;
+  toggleSection(i) {
+    this.eventos[i].open = !this.eventos[i].open;
   }
 
  

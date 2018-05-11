@@ -4,11 +4,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:string = 'SliderPage';
+  rootPage: any= 'SliderPage';
+  loader: any;
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

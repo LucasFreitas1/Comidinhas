@@ -21,6 +21,8 @@ export class EventosPage {
   eventosData: any[];
   eventosLocal: any[];
   eventos: any[];
+  organizacao: boolean = true;
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, db: AngularFirestore) {
 
@@ -43,8 +45,10 @@ export class EventosPage {
   defineFiltro(valor) {
     if (valor == 1) {
       this.eventos = this.eventosData;
+      this.organizacao = true;
     } else if (valor == 2) {
       this.eventos = this.eventosLocal;
+      this.organizacao = false;
     }
 
   }

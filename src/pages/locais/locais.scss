@@ -11,6 +11,8 @@ page-locais {
       padding: 5px;
       text-align: center;
     }
+    
+  
   
     p {
       padding: 10px 0 0 10px !important;
@@ -21,4 +23,11 @@ page-locais {
 
   .bg-style {
     background: rgb(78, 78, 78);
+}
+
+.imagem-tipo-local{
+  max-height: auto;
+  max-width: 80%;
+  display: block;
+ 
 }

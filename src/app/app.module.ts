@@ -42,7 +42,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig,'comidinhasbsb'),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFirestoreModule.enablePersistence()
+    AngularFirestoreModule.enablePersistence(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

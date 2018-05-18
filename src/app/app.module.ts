@@ -12,7 +12,8 @@ import { PrincipalPage } from '../pages/principal/principal';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
+import { HamburguerPage } from '../pages/hamburguer/hamburguer';
+import { Ionic2RatingModule } from 'ionic2-rating';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyAhOOur-hJFWFT1cLZovmxFUeJcsqPzIPE",
@@ -28,7 +29,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    PrincipalPage
+    PrincipalPage,
+    HamburguerPage
   ],
   imports: [
     BrowserModule,
@@ -38,11 +40,13 @@ export const firebaseConfig = {
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
+    Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    PrincipalPage
+    PrincipalPage,
+    HamburguerPage
   ],
   providers: [
     StatusBar,

@@ -4,15 +4,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
-
-
+import {Geolocation} from '@ionic-native/geolocation'
 
 import { MyApp } from './app.component';
 import { PrincipalPage } from '../pages/principal/principal';
-
-
-
-
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
@@ -53,6 +48,7 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     AngularFirestore,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

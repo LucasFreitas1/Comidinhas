@@ -4,7 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
-import {Geolocation} from '@ionic-native/geolocation'
+import { Geolocation } from '@ionic-native/geolocation'
 
 import { MyApp } from './app.component';
 import { PrincipalPage } from '../pages/principal/principal';
@@ -14,14 +14,15 @@ import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HamburguerPage } from '../pages/hamburguer/hamburguer';
 import { Ionic2RatingModule } from 'ionic2-rating';
+import { LocalAbertoPage } from '../pages/local-aberto/local-aberto';
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyAhOOur-hJFWFT1cLZovmxFUeJcsqPzIPE",
-    authDomain: "comidinhas-bsb.firebaseapp.com",
-    databaseURL: "https://comidinhas-bsb.firebaseio.com",
-    projectId: "comidinhas-bsb",
-    storageBucket: "comidinhas-bsb.appspot.com",
-    messagingSenderId: "221610225104"
+  apiKey: "AIzaSyAhOOur-hJFWFT1cLZovmxFUeJcsqPzIPE",
+  authDomain: "comidinhas-bsb.firebaseapp.com",
+  databaseURL: "https://comidinhas-bsb.firebaseio.com",
+  projectId: "comidinhas-bsb",
+  storageBucket: "comidinhas-bsb.appspot.com",
+  messagingSenderId: "221610225104"
 };
 
 
@@ -30,13 +31,14 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     PrincipalPage,
-    HamburguerPage
+    HamburguerPage,
+    LocalAbertoPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig,'comidinhasbsb'),
+    AngularFireModule.initializeApp(firebaseConfig, 'comidinhasbsb'),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
@@ -46,14 +48,15 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     PrincipalPage,
-    HamburguerPage
+    HamburguerPage,
+    LocalAbertoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFirestore,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,6 +1,29 @@
 page-hamburguer {
 
+
+  .imagem-card {
+    object-fit: cover; 
+    height: 100px;
+    width: 100%;
+  }
 }
 .bg-style {
     background: rgb(78, 78, 78);
+
 }
+
+ul {
+    padding: 0px;
+    display:block;
+    margin-left: 15%;
+
+    &.rating li {
+      padding: 5px 10px !important;
+      background: none;
+      color: #ffb400;
+      
+      ion-icon {
+        font-size: 20px;
+      }
+    }
+  }

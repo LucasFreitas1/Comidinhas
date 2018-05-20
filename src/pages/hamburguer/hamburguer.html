@@ -1,13 +1,14 @@
 <ion-header>
 
   <ion-navbar>
-    <h5>Hamburguer</h5>
+    <h5>Hambúrguer</h5>
   </ion-navbar>
 
   <ion-item style="background-color:whitesmoke">
     Filtrar por:
-    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(1)">Data</button>
-    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(2)">Localização</button>
+    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(1)">Avaliação</button>
+    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(2)">Distância</button>
+    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(2)">Preço</button>
   </ion-item>
 
 </ion-header>
@@ -37,49 +38,37 @@
         <ion-card-title>
           {{item.nome}}
         </ion-card-title>
-
-        <rating [(ngModel)]="item.avaliacao" 
-        readOnly="true" 
-        max="5" 
-        emptyStarIconName="star-outline" 
-        halfStarIconName="star-half" 
-        starIconName="star" 
-        nullable="false"> 
-        </rating>
-        
+        <p>
+            <rating [(ngModel)]="item.avaliacao" 
+            readOnly="true" 
+            max="5" 
+            emptyStarIconName="star-outline" 
+            halfStarIconName="star-half" 
+            starIconName="star" 
+            nullable="false"> 
+            </rating>
+        </p>
+        <script onload>
+            getDistanceFromLatLonInKm(item.lat, item.long);
+          </script>
+       <button (click)= "getDistanceFromLatLonInKm(item.lat, item.long)">Distância: {{distancia}} </button> 
+         
         <p>
           Preço médio por pessoa: {{item.preco}}
         </p>
+        <p>
+          Avaliação: {{item.avaliacao}}
+        </p>
+
 
 
       </ion-card-content>
 
-      <ion-card-content *ngIf="item.open">
-        <p>{{item.descricao}}</p>
-        <br>
-        <p>Endereço: {{item.endereco}}</p>
-      </ion-card-content>
-      <ion-col text-center>
-        <button ion-button class=".left" clear small color="dark" icon-start *ngIf="!item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
-          <ion-icon color="black" name='arrow-forward'></ion-icon>
-          Detalhes
-        </button>
-        <br>
-        <button ion-button class=".left" clear small color="dark" icon-start *ngIf="item.open" (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
-          <ion-icon color="black" name='arrow-up'></ion-icon>
-          Menos detalhes
-        </button>
-        <br>
-        <a button ion-button class=".left" clear small color="dark" icon-start *ngIf="item.open" href="{{item.info}}" target="_blank">
-          <ion-icon color="black" name='information-circle'></ion-icon>
-          Mais Informações
-        </a>
-        <br>
-        <a button ion-button class=".left" clear small color="dark" icon-start *ngIf="item.open" href="{{item.linkmaps}}" target="_blank">
-          <ion-icon color="black" name='pin'></ion-icon>
-          Localização
-        </a>
-      </ion-col>
+
+      <button ion-button class=".left" clear small color="dark" icon-start (click)="abrirlocal(item.nome)">
+        <ion-icon color="black" name='arrow-forward'></ion-icon>
+        Detalhes
+      </button>
     </ion-card>
 
 

@@ -15,6 +15,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HamburguerPage } from '../pages/hamburguer/hamburguer';
 import { Ionic2RatingModule } from 'ionic2-rating';
 import { LocalAbertoPage } from '../pages/local-aberto/local-aberto';
+import { HamburguerPageModule } from '../pages/hamburguer/hamburguer.module';
+import { LocalAbertoPageModule } from '../pages/local-aberto/local-aberto.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAhOOur-hJFWFT1cLZovmxFUeJcsqPzIPE",
@@ -30,9 +32,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    PrincipalPage,
-    HamburguerPage,
-    LocalAbertoPage
+    PrincipalPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,9 @@ export const firebaseConfig = {
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
-    Ionic2RatingModule
+    Ionic2RatingModule,
+    HamburguerPageModule,
+    LocalAbertoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

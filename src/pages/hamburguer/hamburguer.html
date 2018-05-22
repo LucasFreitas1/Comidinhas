@@ -51,7 +51,7 @@
         <script onload>
             getDistanceFromLatLonInKm(item.lat, item.long);
           </script>
-       <button (click)= "getDistanceFromLatLonInKm(item.lat, item.long)">Distância: {{distancia}} </button> 
+       <p>Distância:{{getDistanceFromLatLonInKm(item.lat, item.long)}} km </p> 
          
         <p>
           Preço médio por pessoa: {{item.preco}}

@@ -24,8 +24,6 @@ export class HamburguerPage {
   longRec:any;
 
 
-  distancia:any;
-
   constructor(public navCtrl: NavController, public navParams: NavParams,db: AngularFirestore) {
     this.itemsAvaliacao = db.collection('hamburguer', ref => ref.orderBy('nome')).valueChanges();
     this.itemsAvaliacao.subscribe((cadastrar) => {
@@ -56,8 +54,8 @@ export class HamburguerPage {
       ;
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c; // Distance in km
-    this.distancia = d;
-    return d;
+    var rounded = Math.round( d * 10 ) / 10;
+    return rounded;
   }
   
   deg2rad(deg) {

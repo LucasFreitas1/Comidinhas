@@ -46,13 +46,14 @@ export class HamburguerPage {
   }
 
 
-  abrirlocal(nome: any, descricao: any, imagem: any, localizacao: any, linkmaps:any) {
+  abrirlocal(nome: any, descricao: any, imagem: any, localizacao: any, linkmaps:any, avaliacao:any) {
     this.navCtrl.push(LocalAbertoPage, {
       atribNome: nome,
       atribDescricao: descricao,
       atribImagem: imagem,
       atribLocalizacao: localizacao,
-      atribLinkmaps: linkmaps
+      atribLinkmaps: linkmaps,
+      atribAvaliacao: avaliacao
     })
 
 

@@ -19,7 +19,8 @@ export class LocalAbertoPage {
   public descricaoRec;
   public imagemRec;
   public localizacaoRec;
-  public linkmapsRec
+  public linkmapsRec;
+  public avaliacaoRec;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   this.nomeRec = navParams.get("atribNome");
@@ -27,6 +28,7 @@ export class LocalAbertoPage {
   this.imagemRec = navParams.get("atribImagem");
   this.localizacaoRec = navParams.get("atribLocalizacao");
   this.linkmapsRec = navParams.get("atribLinkmaps");
+  this.avaliacaoRec = navParams.get("atribAvaliacao");
   }
 
 

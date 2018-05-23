@@ -16,10 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class LocalAbertoPage {
 
   public nomeRec;
+  public descricaoRec;
+  public imagemRec;
+  public localizacaoRec;
+  public linkmapsRec
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  this.nomeRec = navParams.get("atribNome")
-  
+  this.nomeRec = navParams.get("atribNome");
+  this.descricaoRec = navParams.get("atribDescricao");
+  this.imagemRec = navParams.get("atribImagem");
+  this.localizacaoRec = navParams.get("atribLocalizacao");
+  this.linkmapsRec = navParams.get("atribLinkmaps");
   }
 
 

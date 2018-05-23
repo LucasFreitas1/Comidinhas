@@ -4,6 +4,8 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { LocalAbertoPage } from '../local-aberto/local-aberto';
 
+import { NOMEM } from 'dns';
+
 @IonicPage()
 @Component({
   selector: 'page-hamburguer',
@@ -17,14 +19,16 @@ export class HamburguerPage {
   localDistancia: any[];
   localAvaliacao: any[];
   localPreco: any[];
-  localNome:any[];
-  locais:any[];
-  
-  latRec:any;
-  longRec:any;
+  localNome: any[];
+  locais: any[];
+
+  latRec: any;
+  longRec: any;
+
+  db: AngularFirestore;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,db: AngularFirestore) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, db: AngularFirestore) {
     this.itemsAvaliacao = db.collection('hamburguer', ref => ref.orderBy('nome')).valueChanges();
     this.itemsAvaliacao.subscribe((cadastrar) => {
       this.localAvaliacao = cadastrar,
@@ -34,10 +38,21 @@ export class HamburguerPage {
 
     this.latRec = navParams.get("latpassado");
     this.longRec = navParams.get("longpassado")
+
+
+
+
+
   }
-  abrirlocal(nome: any){
+
+
+  abrirlocal(nome: any, descricao: any, imagem: any, localizacao: any, linkmaps:any) {
     this.navCtrl.push(LocalAbertoPage, {
-      atribNome : nome
+      atribNome: nome,
+      atribDescricao: descricao,
+      atribImagem: imagem,
+      atribLocalizacao: localizacao,
+      atribLinkmaps: linkmaps
     })
 
 
@@ -54,13 +69,16 @@ export class HamburguerPage {
       ;
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c; // Distance in km
-    var rounded = Math.round( d * 10 ) / 10;
+    var rounded = Math.round(d * 10) / 10;
     return rounded;
   }
-  
+
   deg2rad(deg) {
     return deg * (Math.PI / 180)
   }
+
+
+
 
 
 }

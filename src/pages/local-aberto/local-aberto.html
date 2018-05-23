@@ -14,14 +14,25 @@
 
 
 <ion-content padding class="bg-style">
+  <ion-card>
+    <img class="imagem-card" src={{imagemRec}}>
     <ion-item>
-      <ion-thumbnail item-start>
-        <img src="https://1.kekantoimg.com/kfddt9RRF8dN6eP0eCzPVjU1VkI=/fit-in/600x600/s3.amazonaws.com/kekanto_pics/pics/609/1615609.jpg">
-      </ion-thumbnail>
+
       <h2>{{nomeRec}}</h2>
-    <p>Localização: </p>
+      <p>Localização: {{localizacaoRec}}</p>
     </ion-item>
-    <ion-item>
-      teste
-    </ion-item>
+
+
+    <ion-card-content>
+      <p>
+        Descricao: {{descricaoRec}}
+      </p>
+      <br>
+      <a button ion-button class=".left" clear small color="dark" icon-start href="{{linkmapsRec}}" target="_blank" >
+          <ion-icon color="black" name='pin'></ion-icon>
+          Localização
+        </a>
+     
+    </ion-card-content>
+  </ion-card>
 </ion-content>

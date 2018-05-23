@@ -1,11 +1,15 @@
 page-local-aberto {
-    .imagem-card {
-        object-fit: cover; 
-        height: 100px;
-        width: 100%;
-      }
-
+   
 }
+.imagem-card {
+    object-fit: cover; 
+    height: 100px;
+    width: 100%;
+  }
+
 .bg-style {
     background: rgb(78, 78, 78);
+}
+.left{
+    text-align:left;
 }

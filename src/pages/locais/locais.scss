@@ -25,13 +25,18 @@ page-locais {
     background: rgb(78, 78, 78);
 }
 
+
+
 .imagem-tipo-local{
- 
-  max-width: 100%;
-  display: block;
-  
- 
-}
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
 ion-row {
   display: block;

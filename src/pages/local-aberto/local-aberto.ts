@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { DomSanitizer } from '@angular/platform-browser';
 /**
  * Generated class for the LocalAbertoPage page.
  *
@@ -22,7 +22,7 @@ export class LocalAbertoPage {
   public linkmapsRec;
   public avaliacaoRec;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sanitizer: DomSanitizer) {
   this.nomeRec = navParams.get("atribNome");
   this.descricaoRec = navParams.get("atribDescricao");
   this.imagemRec = navParams.get("atribImagem");

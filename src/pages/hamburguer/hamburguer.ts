@@ -4,7 +4,6 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { LocalAbertoPage } from '../local-aberto/local-aberto';
 
-import { NOMEM } from 'dns';
 
 @IonicPage()
 @Component({
@@ -13,13 +12,13 @@ import { NOMEM } from 'dns';
 })
 export class HamburguerPage {
 
-  itemsDistancia: Observable<any[]>;
   itemsAvaliacao: Observable<any[]>;
   itemsPreco: Observable<any[]>;
-  localDistancia: any[];
+  itemsNome:Observable<any[]>
   localAvaliacao: any[];
   localPreco: any[];
   localNome: any[];
+
   locais: any[];
 
   latRec: any;
@@ -29,12 +28,21 @@ export class HamburguerPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, db: AngularFirestore) {
-    this.itemsAvaliacao = db.collection('hamburguer', ref => ref.orderBy('nome')).valueChanges();
-    this.itemsAvaliacao.subscribe((cadastrar) => {
-      this.localAvaliacao = cadastrar,
-        this.locais = cadastrar,
-        this.localNome = cadastrar
+    this.itemsNome = db.collection('hamburguer', ref => ref.orderBy('nome')).valueChanges();
+    this.itemsNome.subscribe((cadastrar) => {
+      this.localNome = cadastrar,
+        this.locais = cadastrar
     })
+
+    this.itemsAvaliacao = db.collection('hamburguer', ref => ref.orderBy('avaliacao')).valueChanges();
+    this.itemsAvaliacao.subscribe((cadastrar) => {
+      this.localAvaliacao = cadastrar
+    })
+    this.itemsPreco = db.collection('hamburguer', ref => ref.orderBy('preco')).valueChanges();
+    this.itemsPreco.subscribe((cadastrar) => {
+      this.localPreco = cadastrar
+    })
+
 
     this.latRec = navParams.get("latpassado");
     this.longRec = navParams.get("longpassado")
@@ -79,7 +87,20 @@ export class HamburguerPage {
   }
 
 
+//criando filtro
+defineFiltro(valor) {
+  if (valor == 1) {
+    this.locais = this.localAvaliacao;
+    
+  } else if (valor == 2) {
+    this.locais= this.localNome ;
+    
+  } else if (valor == 3) {
+    this.locais= this.localPreco ;
+   
+  }
 
+}
 
 
 }

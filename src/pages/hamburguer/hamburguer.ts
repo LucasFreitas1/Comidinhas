@@ -23,30 +23,33 @@ export class HamburguerPage {
 
   latRec: any;
   longRec: any;
+  tipoLocal: any;
 
   db: AngularFirestore;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, db: AngularFirestore) {
-    this.itemsNome = db.collection('hamburguer', ref => ref.orderBy('nome')).valueChanges();
+    this.latRec = navParams.get("latpassado");
+    this.longRec = navParams.get("longpassado");
+    this.tipoLocal = navParams.get("localpassado");
+
+    this.itemsNome = db.collection(this.tipoLocal, ref => ref.orderBy('nome')).valueChanges();
     this.itemsNome.subscribe((cadastrar) => {
       this.localNome = cadastrar,
         this.locais = cadastrar
     })
 
-    this.itemsAvaliacao = db.collection('hamburguer', ref => ref.orderBy('avaliacao')).valueChanges();
+    this.itemsAvaliacao = db.collection(this.tipoLocal, ref => ref.orderBy('avaliacao')).valueChanges();
     this.itemsAvaliacao.subscribe((cadastrar) => {
       this.localAvaliacao = cadastrar
     })
-    this.itemsPreco = db.collection('hamburguer', ref => ref.orderBy('preco')).valueChanges();
+    this.itemsPreco = db.collection(this.tipoLocal, ref => ref.orderBy('preco')).valueChanges();
     this.itemsPreco.subscribe((cadastrar) => {
       this.localPreco = cadastrar
     })
 
 
-    this.latRec = navParams.get("latpassado");
-    this.longRec = navParams.get("longpassado")
-
+    
 
 
 

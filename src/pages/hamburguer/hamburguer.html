@@ -1,16 +1,14 @@
 <ion-header>
 
   <ion-navbar>
-    <h5>Hambúrguer</h5>
+    
+    <ion-item style="background-color:whitesmoke">
+      Filtrar por:
+      <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(1)">Avaliação</button>
+      <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(2)">Nome</button>
+      <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(3)">Preço</button>
+    </ion-item>
   </ion-navbar>
-
-  <ion-item style="background-color:whitesmoke">
-    Filtrar por:
-    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(1)">Avaliação</button>
-    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(2)">Nome</button>
-    <button style="background-color: whitesmoke; color:#292929" ion-button round item-end (click)="defineFiltro(3)">Preço</button>
-  </ion-item>
-
 </ion-header>
 
 
@@ -39,20 +37,15 @@
           {{item.nome}}
         </ion-card-title>
         <p>
-            <rating [(ngModel)]="item.avaliacao" 
-            readOnly="true" 
-            max="5" 
-            emptyStarIconName="star-outline" 
-            halfStarIconName="star-half" 
-            starIconName="star" 
-            nullable="false"> 
-            </rating>
+          <rating [(ngModel)]="item.avaliacao" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+            starIconName="star" nullable="false">
+          </rating>
         </p>
         <script onload>
-            getDistanceFromLatLonInKm(item.lat, item.long);
-          </script>
-       <p>Distância:{{getDistanceFromLatLonInKm(item.lat, item.long)}} km </p> 
-         
+          getDistanceFromLatLonInKm(item.lat, item.long);
+        </script>
+        <p>Distância:{{getDistanceFromLatLonInKm(item.lat, item.long)}} km </p>
+
         <p>
           Preço médio por pessoa: R$ {{item.preco}}
         </p>

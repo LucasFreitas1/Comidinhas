@@ -12,6 +12,7 @@ export class LocaisPage {
   lat: any;
   long: any;
   nomePagina: any;
+  localpassado: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public geo: Geolocation) {
   }
@@ -26,9 +27,56 @@ export class LocaisPage {
   irPagina(tipo){
     switch(tipo) {
       case 'hamburguer':
+      
       this.navCtrl.push(HamburguerPage,{
         latpassado: this.lat,
         longpassado: this.long,
+        localpassado: tipo
+      });
+      break;
+
+      case 'pizza':
+      
+      this.navCtrl.push(HamburguerPage,{
+        latpassado: this.lat,
+        longpassado: this.long,
+        localpassado: tipo
+      });
+      break;
+
+      case 'carnes':
+      
+      this.navCtrl.push(HamburguerPage,{
+        latpassado: this.lat,
+        longpassado: this.long,
+        localpassado: tipo
+      });
+      break;
+
+      case 'chinesa':
+      
+      this.navCtrl.push(HamburguerPage,{
+        latpassado: this.lat,
+        longpassado: this.long,
+        localpassado: tipo
+      });
+      break;
+
+      case 'cafe':
+      
+      this.navCtrl.push(HamburguerPage,{
+        latpassado: this.lat,
+        longpassado: this.long,
+        localpassado: tipo
+      });
+      break;
+
+      case 'doces':
+      
+      this.navCtrl.push(HamburguerPage,{
+        latpassado: this.lat,
+        longpassado: this.long,
+        localpassado: tipo
       });
       break;
      

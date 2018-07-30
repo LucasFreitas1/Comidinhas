@@ -1,7 +1,7 @@
-# ComidinhasTeste
-Teste para desenvolvimento web via ionic
+# Comidinhas
+Primeiro projeto de desenvolvimento web via ionic
 
-Originalmente era para ser somente para teste, porém passou a funcionar e permaneci nesse repositório.
+Programa desenvolvido utilizando Firebase / Cloud Firestore como banco de dados para puxar as informações necessárias e manter os dados no aplicativo.
 
 Link para acesso pelo Firebase:
 https://comidinhas-bsb.firebaseapp.com/
